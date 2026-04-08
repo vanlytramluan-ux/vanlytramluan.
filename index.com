@@ -1,0 +1,195 @@
+#vanlytramluan
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Vạn Lý Trầm Luân</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Georgia", serif;
+  background: #0a0f1c;
+  color: #e5e7eb;
+  overflow-x: hidden;
+}
+
+/* 🌊 nền sóng */
+.wave {
+  position: fixed;
+  width: 200%;
+  height: 200px;
+  background: rgba(255,255,255,0.03);
+  bottom: 0;
+  left: -50%;
+  border-radius: 40%;
+  animation: waveMove 12s infinite linear;
+}
+
+.wave:nth-child(2) {
+  bottom: 20px;
+  animation-duration: 18s;
+  opacity: 0.5;
+}
+
+@keyframes waveMove {
+  from { transform: translateX(0); }
+  to { transform: translateX(50%); }
+}
+
+/* header */
+header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent);
+  text-align: center;
+}
+
+header h1 {
+  font-size: 48px;
+  letter-spacing: 4px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1.5s forwards;
+}
+
+header p {
+  margin-top: 10px;
+  color: #9ca3af;
+  opacity: 0;
+  animation: fadeUp 2s forwards;
+}
+
+/* section */
+section {
+  max-width: 800px;
+  margin: auto;
+  padding: 80px 20px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h2 {
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+}
+
+.quote {
+  font-style: italic;
+  color: #9ca3af;
+  margin-top: 10px;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+a {
+  color: #93c5fd;
+  text-decoration: none;
+}
+
+/* animation */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* footer */
+footer {
+  text-align: center;
+  padding: 40px;
+  color: #6b7280;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="wave"></div>
+<div class="wave"></div>
+
+<header>
+  <h1>VẠN LÝ TRẦM LUÂN</h1>
+  <p>First Tide</p>
+</header>
+
+<section>
+  <h2>First Tide</h2>
+  <p>
+    Giữa hải vực mênh mang, nơi vạn trùng ba đào ngày đêm dâng dậy,
+    có những hành trình âm thầm hình thành từ những tâm hồn mang nhiều tầng suy niệm.
+  </p>
+  <p class="quote">
+    Câu chữ trở thành điểm tựa, nơi những quỹ đạo riêng giao nhau.
+  </p>
+</section>
+
+<section>
+  <h2>Ethos</h2>
+  <p>
+    Một hải trình văn tự, nơi mỗi cá nhân mang theo thế giới riêng.
+  </p>
+</section>
+
+<section>
+  <h2>Substance</h2>
+  <ul>
+    <li>Dựa trên đại hải trình của One Piece</li>
+    <li>Khai thác chiều sâu tâm lý nhân vật</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Term</h2>
+  <p>
+    Không gian đề cao sự kiên nhẫn và chiều sâu cảm nhận.
+  </p>
+  <p class="quote">
+    Dư âm lưu lại, không chỉ ở câu chữ, mà ở ý niệm.
+  </p>
+</section>
+
+<section>
+  <h2>Liên hệ</h2>
+  <p>Email: <a href="mailto:vanlytramluan@gmail.com">vanlytramluan@gmail.com</a></p>
+  <p>Facebook: <a href="https://www.facebook.com/share/14bosyZvYBc/?mibextid=wwXIfr" target="_blank">Trang Facebook</a></p>
+</section>
+
+<footer>
+  © 2026 Vạn Lý Trầm Luân
+</footer>
+
+<script>
+// 🌑 hiệu ứng hiện khi scroll
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+  sections.forEach(sec => {
+    const top = sec.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      sec.classList.add("show");
+    }
+  });
+});
+</script>
+
+</body>
+</html>
